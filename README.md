@@ -248,7 +248,7 @@ The LSTM’s R² is **computed manually** as `1 - (MSE / Var(y))` on the trainin
 
 ---
 
-## Using This in IBM watsonx Orchestrate
+## Implementation for IBM watsonx Orchestrate
 
 Because each major operation is encapsulated in an "agent," you can turn the pipeline into a set of **Orchestrate skills**:
 
