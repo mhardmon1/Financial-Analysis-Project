@@ -1,0 +1,15 @@
+
+
+1. Technical Indicators:
+   - 3-Year Return: MSFT has outperformed the S&P 500 with a 3-year return of 67.4% compared to the index's 62.9%. This indicates strong relative performance.
+   - Linear Model R²: The linear model's R² of 0.647 suggests that the model explains 64.7% of the stock's price movement, indicating a moderate correlation between the predictor variables and the stock's performance.
+   - LSTM Model R²: The LSTM model's R² of 0.968 indicates a much stronger correlation, with the model explaining 96.8% of the stock's price movement. This suggests that the LSTM model, which uses deep learning techniques, is more effective in capturing complex patterns and trends in the data.
+
+2. Differences between 60-day Linear and LSTM Forecasts:
+   - Accuracy: The LSTM model's higher R² value indicates that it provides more accurate forecasts than the linear model. This is likely due to the LSTM model's ability to learn from sequential data and capture non-linear relationships.
+   - Complexity: The LSTM model is more complex than the linear model, as it uses recurrent neural networks to process sequential data. This complexity allows the LSTM model to capture more intricate patterns in the data, leading to better forecasting performance.
+
+3. Actionable Insights:
+   - Stakeholders should consider using the LSTM model's forecasts for more accurate predictions of MSFT's stock performance. However, it's essential to remember that past performance is not always indicative of future results.
+   - Given the strong relative performance of MSFT compared to the S&P 500, stakeholders might want to maintain or even increase their exposure to MSFT stock.
+   - Regularly review and update the
