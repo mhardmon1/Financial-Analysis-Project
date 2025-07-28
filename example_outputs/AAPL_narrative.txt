@@ -1,0 +1,11 @@
+1. Technical Indicators:
+   - The 3-year return for AAPL is 24.6%, which is lower than the S&P 500's 62.9%. This suggests that AAPL has underperformed the broader market over the past three years.
+   - The Linear model R² of 0.463 indicates that the linear regression model explains 46.3% of the stock's price movement, suggesting a moderate relationship between the independent variables and the stock's price.
+   - The LSTM (Long Short-Term Memory) model R² of 0.967 indicates a strong relationship between the independent variables and the stock's price, with the LSTM model explaining 96.7% of the price movement. This suggests that the LSTM model is more accurate in predicting AAPL's stock price.
+
+2. Differences between 60-day linear and LSTM forecasts:
+   - The linear model has a lower R² value (0.463), indicating that it is less accurate in predicting short-term price movements compared to the LSTM model.
+   - The LSTM model, with its high R² value (0.967), is more effective in capturing complex patterns and trends in the data, making it a better tool for short-term forecasting.
+
+3. Actionable insights for relevant stakeholders:
+   - Investors: Given AAPL's underperformance compared to the S&P 500 and the lower accuracy of the linear model, investors might want to consider diversifying their portfolios or exploring other investment opportunities. However, the high accuracy of the LSTM model suggests that AAPL could still be a profitable investment if short-term price movements are accurately predicted.
