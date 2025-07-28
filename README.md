@@ -1,6 +1,6 @@
 # Multi-Cloud AI-driven Financial Analysis Project (IBM watsonx + Microsoft Azure)
 
-*A modular, agent‑oriented Python pipeline for multi‑ticker equity analysis, ML forecasting, AI narrative generation, and cloud artifact publishing foundations for orchestration in IBM watsonx and downstream BI tools such as Tableau.*
+*A modular, agent‑oriented Python pipeline for multi‑ticker equity analysis, ML forecasting, AI narrative generation, and cloud artifact publishing for downstream BI tools.*
 
 ---
 
@@ -8,11 +8,11 @@
 
 **Goal:** Build a Python pipeline that utilizes IBM watsonx and Microsoft Azure to perform end‑to‑end financial stock analysis on one or two stocks per execution, combining:
 
-* **Historical price analytics** (3 years).
-* **Technical indicators** for trend, momentum, and risk profiling.
-* **Dual forecasting models** (Linear Regression & LSTM deep learning).
-* **Generative AI narrative** using IBM watsonx.ai Granite.
-* **Automated artifact publishing** to Microsoft Azure Blob Storage for downstream BI consumption.
+* **Historical price analytics**
+* **Technical indicators** 
+* **Dual forecasting ML models**
+* **Generative AI narrative**
+* **Automated artifact publishing to cloud storage**
 
 **Business Value:**
 
@@ -123,7 +123,7 @@ AZURE_CONTAINER_NAME = "AZURE_CONTAINER_NAME"
 Run the script and you’ll be prompted for up to two comma‑separated tickers:
 
 ```bash
-python financial_stock_analysis.py
+python AI_Financial_Analysis_Project.py
 Enter up to two comma-separated tickers: AAPL, MSFT
 ```
 
@@ -215,7 +215,7 @@ All CSVs, narratives, and images are uploaded for each ticker.
 When two tickers are provided, after both runs finish the script:
 
 1. Extracts each ticker’s 3‑year % return from the result dicts.
-2. Builds a comparison prompt: *"Compare T1 and T2 ... Highlight differences in volatility and in the two forecasting models."*
+2. Builds a comparison prompt
 3. Calls Granite LLM to generate narrative response.
 4. Saves to `comparative_narrative.txt` and uploads to Azure.
 
@@ -314,7 +314,7 @@ After running the script you should have (per ticker) at least:
 
 **Download Locally & Use Text/CSV Connector**
 
-* Use Azure Storage Explorer to download all `*_data.csv` and `*_forecast_data.csv` files.
+* Manually download from Azure or use Azure Storage Explorer to download all CSV and TXT files.
 * In Tableau Desktop: *Connect > Text File*; select one or more CSVs.
 
 ### Build Tableau Data Model
@@ -322,7 +322,6 @@ After running the script you should have (per ticker) at least:
 1. Open Tableau Desktop → *Connect > Text File* → choose `{ticker}_data.csv`.
 2. Drag sheet into canvas; ensure Date column parses as *Date*.
 3. (If 2nd ticker was provided) Repeat for `{ticker2}_data.csv`; create a **Union** so both load into one table with an auto‑added `[Table Name]` or `[Path]` column. Rename to `Ticker`.
-4. Create **calculated field** `Ticker` = IFNULL(\[Ticker], PARSE\_FILENAME(\[Path])) if needed.
 
 ### Create Core Worksheets
 
@@ -330,19 +329,17 @@ After running the script you should have (per ticker) at least:
 
 * Columns: Date.
 * Rows: Adj Close.
-* Add MA50, MA200, EMA50 as additional measures (dual or separate lines).
-* Color by Measure Names; filter by Ticker.
+* Add MA50, MA200, EMA50 as additional measures.
 
 **Worksheet: Volatility & Volume**
 
 * Columns: Date.
-* Rows: Vol30d (%). Add a second axis for Volume (bars). Synchronize axes.
+* Rows: Vol30d (%). Add a second axis for Volume (bars). 
 
 **Worksheet: RSI14**
 
 * Columns: Date.
 * Rows: RSI14.
-* Add reference bands at 30 & 70.
 
 ### Build the Dashboard Layout
 
